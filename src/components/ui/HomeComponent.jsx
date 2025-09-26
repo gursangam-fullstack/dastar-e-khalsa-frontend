@@ -50,9 +50,9 @@ const HomeComponent = () => {
                 </div>
 
                 {/* Admin Login Link */}
-                <div className="link text-end">
+                {/* <div className="link text-end">
                     <Link href={"/"} className="text-blue-400 underline">Login As Admin</Link>
-                </div>
+                </div> */}
             </div>
         </section>
     )
