@@ -26,7 +26,7 @@ const HomeComponent = () => {
                         <div className="conditon-list">
                             <h4 className="font-semibold text-base">ਸਰਤਾਂ</h4>
                             <div className="list ps-4 mt-1">
-                                <ul className="list-disc pl-6 space-y-1 text-sm">
+                                <ul className="list-disc pl-6 space-y-1  text-sm">
                                     <li>ਆਪਣਾ ਆਧਾਰ ਕਾਰਡ ਆਈ ਡੀ ਨਾਲ ਲੈਕੇ ਆਉਣ</li>
                                     <li>ਦਸਤਾਰ ਮੁਕਾਬਲੇ ਵਿਚ ਪਹਿਲਾ ਜੇਤੂਆਂ ਦਾ ਦਸਤਾਰ ਮੁਕਾਬਲਾ ਅਲੱਗ ਹੋਵੇਗਾ</li>
                                     <li>ਇਸ ਮੁਕਾਬਲੇ ਵਿਚ ਦਸਤਾਰ ਕੋਚ ਭਾਗ ਨਹੀਂ ਲੈ ਸਕਦੇ</li>

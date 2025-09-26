@@ -11,12 +11,12 @@ const FormComponent = () => {
                 <div className="form-data grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
                         <label className="block mb-1 text-sm font-semibold">ਨਾਮ (NAME)</label>
-                        <input type="text" className="block w-full p-1 border border-gray-300 rounded-lg" />
+                          <input type="text" className="p-1 border rounded-md w-full" />
                     </div>
 
                     <div>
                         <label className="block mb-1 text-sm font-semibold">ਉਮਰ (AGE)</label>
-                        <input type="text" className="block w-full p-1 border border-gray-300 rounded-lg" />
+                      <input type="text" className="p-1 border rounded-md w-full" />
                     </div>
 
                     <div className="flex flex-col">
