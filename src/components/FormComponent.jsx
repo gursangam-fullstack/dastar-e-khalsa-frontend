@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../lib/axios";
 import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ParticipantCard from "./ParticipantCard";
@@ -34,7 +34,7 @@ const FormComponent = () => {
         e.preventDefault();
         try {
             const res = await axios.post(
-                "http://localhost:3001/participantdata",
+                "/participantdata",
                 formData
             );
             console.log("res data", res.data);
@@ -49,7 +49,7 @@ const FormComponent = () => {
                 progress: undefined,
                 theme: "light",
                 transition: Zoom,
-                type: res.data.success ? "success" : "error", 
+                type: res.data.success ? "success" : "error",
             });
 
             if (res.data.success === true) {
@@ -83,7 +83,7 @@ const FormComponent = () => {
                     progress: undefined,
                     theme: "light",
                     transition: Zoom,
-                    type: "error", 
+                    type: "error",
                 }
             );
         }
