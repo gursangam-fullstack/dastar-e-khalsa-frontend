@@ -1,5 +1,3 @@
-// import Link from "next/link"
-import { Link } from "react-router-dom"
 import FormComponent from "../FormComponent"
 
 const HomeComponent = () => {
@@ -19,8 +17,8 @@ const HomeComponent = () => {
                             <h2 className="text-lg font-bold underline pb-2">ਹਦਾਇਤਾਂ(Instructions)</h2>
                         </div>
                         <div className="subheading">
-                            <h4 className="text-base">ਸਥਾਨ: ਕਰਨ ਫਾਰਮ, ਰਾਜਪੁਰਾ</h4>
-                            <h4 className="text-base">ਦਿਨ: 30 ਮਾਰਚ 2025</h4>
+                            <h4 className="text-base">ਸਥਾਨ: ਝੰਡਾ ਗਰਾਊਂਡ, ਰਾਜਪੁਰਾ</h4>
+                            <h4 className="text-base">ਦਿਨ: 2 ਨਵੰਬਰ 2025</h4>
                             <h4 className="text-base">ਸਮਾਂ: ਸਵੇਰੇ 9:00 ਵਜੇ ਤੋਂ ਦੁਪਹਿਰ 2:00 ਵਜੇ ਤੱਕ</h4>
                         </div>
                         <div className="conditon-list">
@@ -37,7 +35,7 @@ const HomeComponent = () => {
                                     <li>ਜੱਜ ਸਾਹਿਬਾਨ ਦਾ ਫੈਸਲਾ ਅਟੱਲ ਹੋਵੇਗਾ</li>
                                     <li>ਵਡੇ ਵੀਰਾ ਅਤੇ ਭੈਣਾ ਲਈ 25 ਸਾਲ ਤਕ ਦੀ ਉਮਰ ਨਿਰਧਾਰਿਤ ਕੀਤੀ ਗਈ ਹੈ ਇਸ ਤੋ ਜਿਆਦਾ ਉਮਰ ਦੇ ਵੀਰ ਭੈਣਾਂ ਹਿੱਸਾ ਨਹੀਂ ਲੈ ਸਕਦੇ</li>
                                     <li>ਦੋਨੋ ਹੀ ਗਰੁੱਪ ਦੇ ਬੱਚੇ ਦਸਤਾਰ ਅਤੇ ਦੁਮਾਲੇ ਆਪਣੇ ਲੈ ਕੇ ਆਉਣ ਜੀ</li>
-                                    <li>ਰਜਿਸਟ੍ਰੇਸ਼ਨ 30/ਮਾਰਚ/2025 ਨੂੰ ਸਵੇਰੇ 11.00 ਵਜੇ ਬੰਦ ਹੋ ਜਾਵੇਗੀ</li>
+                                    <li>ਰਜਿਸਟ੍ਰੇਸ਼ਨ 2/ਨਵੰਬਰ/2025 ਨੂੰ ਸਵੇਰੇ 11.00 ਵਜੇ ਬੰਦ ਹੋ ਜਾਵੇਗੀ</li>
                                 </ul>
                             </div>
                         </div>
@@ -49,10 +47,6 @@ const HomeComponent = () => {
                     </div>
                 </div>
 
-                {/* Admin Login Link */}
-                {/* <div className="link text-end">
-                    <Link href={"/"} className="text-blue-400 underline">Login As Admin</Link>
-                </div> */}
             </div>
         </section>
     )
