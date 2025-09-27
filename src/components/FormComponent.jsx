@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ParticipantCard from "./participantCard";
+import ParticipantCard from "./ParticipantCard";
 
 const FormComponent = () => {
     const [formData, setFormData] = useState({
