@@ -39,7 +39,7 @@ const FormComponent = () => {
                 "/participantdata",
                 formData
             );
-            console.log("res data", res.data);
+            // console.log("res data", res.data);
 
             toast(res.data.message, {
                 position: "top-center",
@@ -71,7 +71,7 @@ const FormComponent = () => {
                 });
             }
         } catch (error) {
-            console.error(error);
+            // console.error(error);
 
             // Prefer server-provided message if present, then fallback to other known fields
             const serverMessage =
