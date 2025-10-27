@@ -19,7 +19,8 @@ const FormComponent = () => {
         group: "",
     });
 
-    const [participantData, setParticipantData] = useState(null)
+    const [participantData, setParticipantData] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,6 +33,7 @@ const FormComponent = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
         try {
             const res = await axios.post(
                 "/participantdata",
@@ -71,21 +73,27 @@ const FormComponent = () => {
         } catch (error) {
             console.error(error);
 
-            toast(
-                error.response?.data?.error || "Something went wrong. Please try again.",
-                {
-                    position: "top-center",
-                    autoClose: 3000,
-                    hideProgressBar: true,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    transition: Zoom,
-                    type: "error",
-                }
-            );
+            // Prefer server-provided message if present, then fallback to other known fields
+            const serverMessage =
+                error.response?.data?.message ||
+                error.response?.data?.error ||
+                error.message ||
+                "Something went wrong. Please try again.";
+
+            toast(serverMessage, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Zoom,
+                type: "error",
+            });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -226,7 +234,7 @@ const FormComponent = () => {
                                             checked={formData.gender === "Male"}
                                             onChange={handleChange}
                                         />
-                                        Male
+                                        Male ( ਪੁਰਸ਼ )
                                     </label>
                                     <label className="flex items-center gap-1">
                                         <input
@@ -236,7 +244,7 @@ const FormComponent = () => {
                                             checked={formData.gender === "Female"}
                                             onChange={handleChange}
                                         />
-                                        Female
+                                        Female ( ਮਹਿਲਾ )
                                     </label>
                                 </div>
                             </div>
@@ -255,7 +263,7 @@ const FormComponent = () => {
                                             checked={formData.competition === "turban"}
                                             onChange={handleChange}
                                         />
-                                        Turban
+                                        Turban ( ਦਸਤਾਰ )
                                     </label>
                                     <label className="flex items-center gap-1">
                                         <input
@@ -265,7 +273,7 @@ const FormComponent = () => {
                                             checked={formData.competition === "dumala"}
                                             onChange={handleChange}
                                         />
-                                        Dumala
+                                        Dumala ( ਦੁਮਾਲਾ )
                                     </label>
                                 </div>
                             </div>
@@ -282,7 +290,7 @@ const FormComponent = () => {
                                             checked={formData.group === "junior"}
                                             onChange={handleChange}
                                         />
-                                        Junior
+                                        Junior  (ਜੂਨੀਅਰ)
                                     </label>
                                     <label className="flex items-center gap-1">
                                         <input
@@ -292,7 +300,7 @@ const FormComponent = () => {
                                             checked={formData.group === "senior"}
                                             onChange={handleChange}
                                         />
-                                        Senior
+                                        Senior  (ਸੀਨੀਅਰ)
                                     </label>
                                     <label className="flex items-center gap-1">
                                         <input
@@ -302,7 +310,7 @@ const FormComponent = () => {
                                             checked={formData.group === "expert"}
                                             onChange={handleChange}
                                         />
-                                        Expert
+                                        Expert  (ਮਾਹਰ)
                                     </label>
                                 </div>
                             </div>
@@ -311,9 +319,21 @@ const FormComponent = () => {
                             <div className="flex flex-col justify-center items-start">
                                 <button
                                     type="submit"
-                                    className="px-3 py-1 bg-custom-yellow text-white rounded-md md:max-w-[40%] md:w-[40%] max-w-[40%] w-[40%] font-semibold md:text-lg"
+                                    disabled={isSubmitting}
+                                    aria-busy={isSubmitting}
+                                    aria-disabled={isSubmitting}
+                                    className="px-3 py-1  bg-custom-yellow text-white rounded-md md:max-w-[40%] md:w-[40%] max-w-[40%] w-[40%] font-semibold md:text-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center"
                                 >
-                                    Submit
+                                    {isSubmitting && (
+                                        <>
+                                            <svg className="animate-spin h-4 w-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                                            </svg>
+                                            <span className="sr-only">Submitting...</span>
+                                        </>
+                                    )}
+                                    <span aria-live="polite">{isSubmitting ? 'Submitting...' : 'Submit'}</span>
                                 </button>
                             </div>
                         </div>

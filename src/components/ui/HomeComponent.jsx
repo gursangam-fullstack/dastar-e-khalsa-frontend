@@ -1,9 +1,10 @@
 import FormComponent from "../FormComponent"
+import Footer from "./Footer"
 
 const HomeComponent = () => {
     return (
-        <section className="hero">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="hero min-h-screen flex flex-col">
+            <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header Image */}
                 <div className="image w-full h-auto md:h-[20vh] lg:h-[23vh] py-1">
                     <img src="headerImage.png" alt="header image" className="w-full h-full rounded-2xl" />
@@ -25,17 +26,17 @@ const HomeComponent = () => {
                             <h4 className="font-semibold text-base">ਸਰਤਾਂ</h4>
                             <div className="list ps-4 mt-1">
                                 <ul className="list-disc pl-6 space-y-1  text-sm">
-                                    <li>ਆਪਣਾ ਆਧਾਰ ਕਾਰਡ ਆਈ ਡੀ ਨਾਲ ਲੈਕੇ ਆਉਣ</li>
-                                    <li>ਦਸਤਾਰ ਮੁਕਾਬਲੇ ਵਿਚ ਪਹਿਲਾ ਜੇਤੂਆਂ ਦਾ ਦਸਤਾਰ ਮੁਕਾਬਲਾ ਅਲੱਗ ਹੋਵੇਗਾ</li>
-                                    <li>ਇਸ ਮੁਕਾਬਲੇ ਵਿਚ ਦਸਤਾਰ ਕੋਚ ਭਾਗ ਨਹੀਂ ਲੈ ਸਕਦੇ</li>
-                                    <li>ਨੌਜਵਾਨ ਬਾਜ ਸੀਸਾ‌ ਪੱਗ ਪਿੰਨ ਆਪੋ ਆਪਣਾ ਨਾਲ ਲੈਕੇ ਆਉਣ</li>
-                                    <li>ਦਸਤਾਰ ਮੁਕਾਬਲੇ ਦਾ ਟਾਈਮ ੧੨ ਮਿੰਟ ਦਾ ਹੋਵੇਗਾ</li>
-                                    <li>ਉਮਰ 8-15 ਸਾਲ ਤੱਕ ਜੂਨੀਅਰ  ਗਰੁੱਪ</li>
-                                    <li>ਉਮਰ 16 ਤੋ 25 ਸਾਲ ਸੀਨੀਅਰ ਗਰੁੱਪ</li>
-                                    <li>ਜੱਜ ਸਾਹਿਬਾਨ ਦਾ ਫੈਸਲਾ ਅਟੱਲ ਹੋਵੇਗਾ</li>
-                                    <li>ਵਡੇ ਵੀਰਾ ਅਤੇ ਭੈਣਾ ਲਈ 25 ਸਾਲ ਤਕ ਦੀ ਉਮਰ ਨਿਰਧਾਰਿਤ ਕੀਤੀ ਗਈ ਹੈ ਇਸ ਤੋ ਜਿਆਦਾ ਉਮਰ ਦੇ ਵੀਰ ਭੈਣਾਂ ਹਿੱਸਾ ਨਹੀਂ ਲੈ ਸਕਦੇ</li>
-                                    <li>ਦੋਨੋ ਹੀ ਗਰੁੱਪ ਦੇ ਬੱਚੇ ਦਸਤਾਰ ਅਤੇ ਦੁਮਾਲੇ ਆਪਣੇ ਲੈ ਕੇ ਆਉਣ ਜੀ</li>
-                                    <li>ਰਜਿਸਟ੍ਰੇਸ਼ਨ 2/ਨਵੰਬਰ/2025 ਨੂੰ ਸਵੇਰੇ 11.00 ਵਜੇ ਬੰਦ ਹੋ ਜਾਵੇਗੀ</li>
+                                    <li>ਆਪਣਾ ਆਧਾਰ ਕਾਰਡ ਆਈ ਡੀ ਨਾਲ ਲੈਕੇ ਆਉਣ।</li>
+                                    <li>ਦਸਤਾਰ ਮੁਕਾਬਲੇ ਵਿਚ ਪਹਿਲਾ ਜੇਤੂਆਂ ਦਾ ਦਸਤਾਰ ਮੁਕਾਬਲਾ ਅਲੱਗ ਹੋਵੇਗਾ। ਉਹ Expert ( ਮਾਹਰ ) ਸ਼੍ਰੇਣੀ (category) ਵਿੱਚ ਰਜਿਸਟਰ ਕਰਨਗੇ।</li>
+                                    <li>ਇਸ ਮੁਕਾਬਲੇ ਵਿਚ ਦਸਤਾਰ ਕੋਚ ਭਾਗ ਨਹੀਂ ਲੈ ਸਕਦੇ।</li>
+                                    <li>ਨੌਜਵਾਨ ਬਾਜ ਸੀਸਾ‌ ਪੱਗ ਪਿੰਨ ਆਪੋ ਆਪਣਾ ਨਾਲ ਲੈਕੇ ਆਉਣ।</li>
+                                    <li>ਦਸਤਾਰ ਮੁਕਾਬਲੇ ਦਾ ਟਾਈਮ ੧੨ ਮਿੰਟ ਦਾ ਹੋਵੇਗਾ।</li>
+                                    <li>ਉਮਰ 8-15 ਸਾਲ ਤੱਕ ਜੂਨੀਅਰ  ਗਰੁੱਪ।</li>
+                                    <li>ਉਮਰ 16 ਤੋ 25 ਸਾਲ ਸੀਨੀਅਰ ਗਰੁੱਪ।</li>
+                                    <li>ਜੱਜ ਸਾਹਿਬਾਨ ਦਾ ਫੈਸਲਾ ਅਟੱਲ ਹੋਵੇਗਾ।</li>
+                                    <li>ਵਡੇ ਵੀਰਾ ਅਤੇ ਭੈਣਾ ਲਈ 25 ਸਾਲ ਤਕ ਦੀ ਉਮਰ ਨਿਰਧਾਰਿਤ ਕੀਤੀ ਗਈ ਹੈ ਇਸ ਤੋ ਜਿਆਦਾ ਉਮਰ ਦੇ ਵੀਰ ਭੈਣਾਂ ਹਿੱਸਾ ਨਹੀਂ ਲੈ ਸਕਦੇ।</li>
+                                    <li>ਦੋਨੋ ਹੀ ਗਰੁੱਪ ਦੇ ਬੱਚੇ ਦਸਤਾਰ ਅਤੇ ਦੁਮਾਲੇ ਆਪਣੇ ਲੈ ਕੇ ਆਉਣ ਜੀ।</li>
+                                    <li>ਰਜਿਸਟ੍ਰੇਸ਼ਨ 2/ਨਵੰਬਰ/2025 ਨੂੰ ਸਵੇਰੇ 11.00 ਵਜੇ ਬੰਦ ਹੋ ਜਾਵੇਗੀ।</li>
                                 </ul>
                             </div>
                         </div>
@@ -48,6 +49,12 @@ const HomeComponent = () => {
                 </div>
 
             </div>
+
+            {/* Footer */}
+            
+ <Footer />
+           
+
         </section>
     )
 }
